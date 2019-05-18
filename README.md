@@ -11,3 +11,8 @@ I am running this on a Raspberry Pi, so have had to make some additional changes
 From Kary's description :
 My version of Openwattson, I needed to add collection of stats for generated power (`noww` command) as I have a Wattson Solar Plus.  This code is originally from http://dialog.hut.fi/openwattson/
 
+SQL logging
+===========
+I have moved away from the locally generated and stored graph images to an SQL based version. There is now a single command to retrieve the gernerated and used power, and to store this in a mySQL database.
+
+I have created an additional project, SolarPower_Display that can be used to display the results via a webserver.
