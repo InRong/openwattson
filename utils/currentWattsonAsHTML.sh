@@ -57,7 +57,7 @@ if [ $# -ge 4 ]; then
 fi
 
 echo " </center> </td></tr><tr><td>" >> $1
- $scriptDir/analysesolar_web.sh >> $1
+ $scriptDir/analysesolar_web.sh $5 >> $1
 echo "</td></tr><tr><td colspan="4">" >> $1
 # Continue with rest
 echo "<center><b>`date`</b>

@@ -227,6 +227,10 @@ int get_configuration(struct config_type *config, char *path)
 	config->HTMLfile_dir=(char *)calloc(PATH_SIZE+1,1);
 	config->temp_dir=(char *)calloc(PATH_SIZE+1,1);
 	config->script_dir=(char *)calloc(PATH_SIZE+1,1);
+	config->dbname=(char *)calloc(PATH_SIZE+1,1);
+	config->dbhost=(char *)calloc(PATH_SIZE+1,1);
+	config->dbusername=(char *)calloc(PATH_SIZE+1,1);
+	config->dbpwd=(char *)calloc(PATH_SIZE+1,1);
 
 	// First we set everything to defaults - faster than many if statements
 	strcpy(config->serial_device_name, DEFAULT_SERIAL_DEVICE);  // Name of serial device
@@ -287,6 +291,31 @@ int get_configuration(struct config_type *config, char *path)
 			strncpy(config->script_dir,val, PATH_SIZE);
 			continue;
 		}
+
+		if ((strcmp(token,"DB_NAME")==0) && (strlen(val) != 0))
+		{
+			strncpy(config->dbname,val, PATH_SIZE);
+			continue;
+		}
+
+		if ((strcmp(token,"DB_HOST")==0) && (strlen(val) != 0))
+		{
+			strncpy(config->dbhost,val, PATH_SIZE);
+			continue;
+		}
+
+		if ((strcmp(token,"DB_USERNAME")==0) && (strlen(val) != 0))
+		{
+			strncpy(config->dbusername,val, PATH_SIZE);
+			continue;
+		}
+
+		if ((strcmp(token,"DB_PWD")==0) && (strlen(val) != 0))
+		{
+			strncpy(config->dbpwd,val, PATH_SIZE);
+			continue;
+		}
+
 	}
 	return (0);
 }

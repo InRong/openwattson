@@ -16,12 +16,16 @@
 
 # Verify that we have at least four command line parameters.
 if [ $# -lt 4 ]; then
-	echo "Usage: ./wattsonplot logfile gen_pngfile solar_pngfile diff_pngfile"
+	echo "Usage: ./wattsonplot logfile gen_pngfile solar_pngfile diff_pngfile {date to plot}"
 	exit 0
 fi
 
-tmpdir=`getconf temp`
-Yest=`date +%Y-%b-%d --date=yesterday`
+tmpdir=`/usr/local/bin/getconf temp`
+if [ $# -lt 5 ]; then 
+  Yest=`date +%Y-%b-%d --date=yesterday`
+else
+  Yest=$5
+fi
 All_Yest="${Yest}.00:00:00 ${Yest}.23:59:59"
 
 # Set variable accordingly

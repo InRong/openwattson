@@ -15,7 +15,8 @@ solar="Solar_${today}.png"
 diff="Diff_${today}.png"
 
 
-$scriptDir/wattsonplot.sh $logfile ${basedir}$gen ${basedir}$solar ${basedir}$diff
-$scriptDir/currentWattsonAsHTML.sh $filename $gen $solar $diff
+$scriptDir/wattsonplot.sh $logfile ${basedir}$gen ${basedir}$solar ${basedir}$diff $1
+$scriptDir/currentWattsonAsHTML.sh $filename $gen $solar $diff $1
 
 echo $scriptDir > /tmp/scriptdir.txt
+echo `which getconf` >> /tmp/scriptdir.txt

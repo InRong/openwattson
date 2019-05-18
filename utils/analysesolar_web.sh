@@ -1,6 +1,6 @@
 #!/bin/sh
-tmpdir=`getconf temp`
-logdir=`getconf logdir`
+tmpdir=`/usr/local/bin/getconf temp`
+logdir=`/usr/local/bin/getconf logdir`
 
 if [ $# -eq 1 ]; then
 	echo "Checking for ${logdir}/wattson_log-$1.txt"

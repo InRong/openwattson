@@ -43,6 +43,10 @@ struct config_type
 	char *HTMLfile_dir;
 	char *temp_dir;
 	char *script_dir;
+	char *dbhost;
+	char *dbname;
+	char *dbusername;
+	char *dbpwd;
 };
 
 struct timestamp
